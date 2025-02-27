@@ -1,5 +1,6 @@
 import streamlit as st
-from downloader.youtube import download_video
+from utils.validators import validate_link_youtube
+from formater.gemini import transform_transcrip_to_text
 
 
 def main():
@@ -9,11 +10,15 @@ def main():
     if not link:
         st.warning("Please enter a link")
         return
-    if st.button("Transcribe"):
-        st.write("Transcript:")
+    if not validate_link_youtube(link, st):
+        st.warning("Please enter a valid YouTube link")
+        return
 
-        transcript = download_video(link)
-        st.write(transcript)
+    with st.spinner("Transcribing..."):
+        response = transform_transcrip_to_text(link=link)
+
+        st.subheader("Transcription:")
+        st.code(response)
 
 
 if __name__ == "__main__":
