@@ -5,10 +5,8 @@ Module for transforming YouTube video transcriptions to coherent text using Goog
 import os
 
 # Third-party imports
-
 from google import genai
 from google.genai import types
-
 
 # First-party imports
 from src.transcription.youtube import download_video

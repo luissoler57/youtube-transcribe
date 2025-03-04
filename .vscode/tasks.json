@@ -19,26 +19,24 @@
         "docker-build"
       ],
       "dockerRun": {
-        "ports": [
-          {
-            "containerPort": 8501,
-            "hostPort": 8501
-          }
-        ],
-        "volumes": [
-          {
-            "localPath": "${workspaceFolder}/data",
-            "containerPath": "/app/data",
-            "permissions": "rw"
-          }
-        ]
+        "interactive": true,
+        "tty": true
       },
       "python": {
-        "args": [
-          "run",
-          "src/main.py"
-        ],
-        "module": "streamlit"
+        "file": "src/main.py"
+      }
+    },
+    {
+      "type": "docker-run",
+      "label": "docker-run: interactive-shell",
+      "dependsOn": [
+        "docker-build"
+      ],
+      "dockerRun": {
+        "interactive": true,
+        "tty": true,
+        "overrideCommand": true,
+        "command": "/bin/bash"
       }
     }
   ]
