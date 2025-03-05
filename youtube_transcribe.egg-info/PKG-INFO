@@ -1,0 +1,8 @@
+Metadata-Version: 2.2
+Name: youtube-transcribe
+Version: 0.1.0
+Summary: YouTube transcription tool that downloads and processes video transcripts.
+Requires-Dist: youtube-transcript-api
+Requires-Dist: google-genai
+Dynamic: requires-dist
+Dynamic: summary

@@ -1,8 +1,11 @@
-from youtube_transcript_api import YouTubeTranscriptApi
-from typing import Optional
+from youtube_transcript_api import (
+    CouldNotRetrieveTranscript,
+    NoTranscriptFound,
+    YouTubeTranscriptApi,
+)
 
 
-def download_video(link: str) -> str:
+def download_transcription_video(link: str) -> str:
     video_id = link.split("v=")[1]
     lineas = ""
     try:
@@ -10,8 +13,7 @@ def download_video(link: str) -> str:
         for line in transcript:
             lineas += line["text"] + "\n"
         return lineas
-
-    except YouTubeTranscriptApi.CouldNotRetrieveTranscript as e:
+    except CouldNotRetrieveTranscript as e:
         return f"Could not retrieve transcript: {e}"
-    except YouTubeTranscriptApi.NoTranscriptFound as e:
+    except NoTranscriptFound as e:
         return f"No transcript found: {e}"

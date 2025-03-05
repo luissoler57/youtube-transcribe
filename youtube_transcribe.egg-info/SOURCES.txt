@@ -1,0 +1,12 @@
+setup.py
+src/__init__.py
+src/main.py
+src/formater/__init__.py
+src/formater/transcrition_video.py
+src/transcription/__init__.py
+src/transcription/youtube.py
+youtube_transcribe.egg-info/PKG-INFO
+youtube_transcribe.egg-info/SOURCES.txt
+youtube_transcribe.egg-info/dependency_links.txt
+youtube_transcribe.egg-info/requires.txt
+youtube_transcribe.egg-info/top_level.txt
