@@ -4,5 +4,6 @@ Version: 0.1.0
 Summary: YouTube transcription tool that downloads and processes video transcripts.
 Requires-Dist: youtube-transcript-api
 Requires-Dist: google-genai
+Requires-Dist: pyperclip
 Dynamic: requires-dist
 Dynamic: summary

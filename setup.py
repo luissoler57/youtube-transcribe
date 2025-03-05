@@ -8,5 +8,6 @@ setup(
     install_requires=[
         "youtube-transcript-api",
         "google-genai",
+        "pyperclip",
     ],
 )

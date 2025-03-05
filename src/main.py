@@ -5,6 +5,8 @@ This module allows users to enter a YouTube link, download the transcript,
 and format it into readable text.
 """
 
+import pyperclip as cp
+
 from src.formater.transcrition_video import transform_transcrip_to_text
 from src.transcription.youtube import download_transcription_video
 from src.utils.validators import validate_link_youtube
@@ -18,7 +20,7 @@ def main():
     and formats it into readable text.
     """
 
-    print("Hello, World!")
+    print("Welcome to the YouTube transcription tool!")
     # Get input from the user
     link = input("Please enter the link to the youtube: ")
     while not validate_link_youtube(link):
@@ -27,7 +29,8 @@ def main():
 
     transcript = download_transcription_video(link)
     gemini_complete = transform_transcrip_to_text(transcript=transcript)
-    print(gemini_complete)
+    cp.copy(gemini_complete)
+    print("The text has been copied to the clipboard!")
 
 
 if __name__ == "__main__":
