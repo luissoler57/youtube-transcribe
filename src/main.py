@@ -15,7 +15,6 @@ from src.utils.validators import validate_link_youtube
 def main():
     """
     Main function that handles user input and processes YouTube transcriptions.
-
     Prompts the user for a YouTube link, validates it, downloads the transcript,
     and formats it into readable text.
     """
