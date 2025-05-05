@@ -9,7 +9,7 @@ from google.genai import types
 
 API_GEMINI = os.environ.get("API_GEMINI")
 
-client = genai.Client(api_key="AIzaSyCe1OMCHVLtIlUhk1C6iDkprBhAMCcW2U8")
+client = genai.Client(api_key="AIzaSyAx5czeIe1lgsPFplhHBHVyYcqYFdElciE")
 MODEL_GEMINI = "gemini-2.0-flash"
 
 SYS_INSTRUCT = """
@@ -37,11 +37,13 @@ Al procesar una transcripción de YouTube:
    ✓ Señalar afirmaciones controvertidas con [¿Verificar?]  
    ✓ Identificar posibles sesgos o falacias lógicas  
 
-**Formato Apple Notes:**  
+Formato Apple Notes: 
 Título: [Tema Principal] - Resumen Ejecutivo  
-Cuerpo: Usar viñetas y guiones (–) para listas o enumeradas  
-Separar secciones con líneas divisorias ---  
-Evitar formato markdown y *, priorizar legibilidad en móvil  
+
+No utilices formato markdown,
+No utilices "*" asterisco,
+No utilices el "#", 
+priorizar legibilidad en móvil 
 
 Tono: Académico-Coloquial balanceado (para estudio rápido)  
 """

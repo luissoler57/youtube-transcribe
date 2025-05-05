@@ -5,9 +5,9 @@ This module allows users to enter a YouTube link, download the transcript,
 and format it into readable text.
 """
 
-from src.formater.transcrition_video import transform_transcrip_to_text
-from src.transcription.youtube import download_transcription_video
-from src.utils.validators import validate_link_youtube
+from formater.transcrition_video import transform_transcrip_to_text
+from transcription.youtube import download_transcription_video
+from utils.validators import validate_link_youtube
 
 
 def main():
